@@ -51,7 +51,7 @@ public class FrequentWordSolver {
 		int end = wordSize;
 
 		if (end > inputStr.length())
-			logger.info("Input sTring too small, no frequent words of size "
+			logger.info("Input String too small, no frequent words of size "
 					+ wordSize + " exist in string " + inputStr);
 
 		while (end <= inputStr.length()) {
