@@ -8,9 +8,8 @@ import java.io.IOException;
 import com.mukhar.commons.FilePicker;
 
 public class PatternFinder2 {
-	String pattern = "CTTGATCAT";
-
-	// String pattern = "TCGGCAATC";
+//	String pattern = "CTTGATCAT";
+	 String pattern = "ATGATCAAG";
 
 	public static void main(String[] args) {
 		PatternFinder2 solver = new PatternFinder2();
