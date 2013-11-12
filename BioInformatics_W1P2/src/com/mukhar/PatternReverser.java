@@ -1,11 +1,6 @@
 package com.mukhar;
 
 import java.io.File;
-import java.util.TreeMap;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.Formatter;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
 
 import com.mukhar.commons.FilePicker;
 
