@@ -2,9 +2,15 @@ package com.mukhar;
 
 import static org.junit.Assert.*;
 
+import java.io.File;
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.mukhar.commons.FilePicker;
+import com.mukhar.commons.LineDataReader;
 
 public class SkewCalculatorTest {
 	int[] actuals = null;
@@ -64,9 +70,22 @@ public class SkewCalculatorTest {
 
 	@Test
 	public void testSkew06() {
-		String input = "";
+		LineDataReader ldr = new LineDataReader();
+		File f = FilePicker.selectFile(".");
+		ldr.openFile(f);
+		ArrayList<String> lines = ldr.readFile(1);
+
 		int[] expecteds = new int[] { 89969, 89970, 89971, 90345, 90346 };
-		actuals = SkewCalculator.FindMinSkew(input);
+		actuals = SkewCalculator.FindMinSkew(lines.get(0));
 		assertArrayEquals(expecteds, actuals);
+	}
+
+	@Test
+	public void testSkew07() {
+		LineDataReader ldr = new LineDataReader();
+		File f = FilePicker.selectFile(".");
+		ldr.openFile(f);
+		ArrayList<String> lines = ldr.readFile(1);
+		actuals = SkewCalculator.FindMinSkew(lines.get(0));
 	}
 }
