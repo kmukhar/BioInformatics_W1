@@ -19,7 +19,7 @@ public class PatternFinder {
 		return result;
 	}
 
-	public static int[] findMismatches(String pattern, String text, int maxWrong) {
+	public static int[] closeMatches(String pattern, String text, int maxWrong) {
 		ArrayList<Integer> temp = new ArrayList<>();
 		int start = 0;
 		while (start + pattern.length() <= text.length()) {

@@ -29,21 +29,21 @@ public class PatternFinderTest {
 	public void testFindApproxMatches03() {
 		int maxWrong = 1;
 		assertArrayEquals(new int[] { 0, 1, 2 },
-				PatternFinder.findMismatches("A", "ABA", maxWrong));
+				PatternFinder.closeMatches("A", "ABA", maxWrong));
 	}
 
 	@Test
 	public void testFindApproxMatches04() {
 		int maxWrong = 1;
 		assertArrayEquals(new int[] { 0, 1 },
-				PatternFinder.findMismatches("AA", "ABA", maxWrong));
+				PatternFinder.closeMatches("AA", "ABA", maxWrong));
 	}
 
 	@Test
 	public void testFindApproxMatches05() {
 		int maxWrong = 3;
 		assertArrayEquals(expected,
-				PatternFinder.findMismatches(pattern, input, maxWrong));
+				PatternFinder.closeMatches(pattern, input, maxWrong));
 	}
 
 	@Test
@@ -60,7 +60,7 @@ public class PatternFinderTest {
 
 		assertArrayEquals(
 				exp,
-				PatternFinder.findMismatches(lines.get(0), lines.get(1),
+				PatternFinder.closeMatches(lines.get(0), lines.get(1),
 						mw.intValue()));
 	}
 
@@ -72,7 +72,7 @@ public class PatternFinderTest {
 		ArrayList<String> lines = ldr.readFile(3);
 		Integer mw = new Integer(lines.get(2));
 
-		int[] exp = PatternFinder.findMismatches(lines.get(0), lines.get(1),
+		int[] exp = PatternFinder.closeMatches(lines.get(0), lines.get(1),
 				mw.intValue());
 		for (int i : exp)
 			System.out.print(i + " ");
