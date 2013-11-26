@@ -7,13 +7,18 @@ import com.mukhar.commons.FilePicker;
 public class PatternReverser {
 
 	public static void main(String[] args) {
-		PatternReverser solver = new PatternReverser();
-		solver.reverserAndComplement();
+		PatternReverser solver = new PatternReverser(true);
+		solver.reverseAndComplement();
 	}
 
 	private String inputStr;
 
-	public PatternReverser() {
+	public PatternReverser(boolean useFile) {
+		if (useFile)
+			selectAndReadFile();
+	}
+
+	public void selectAndReadFile() {
 		File f = FilePicker.selectFile("/Users/Kevin/Downloads");
 		DataReader dr = new DataReader();
 		String[] s = new String[1];
@@ -24,9 +29,14 @@ public class PatternReverser {
 		System.out.println();
 	}
 
-	private void reverserAndComplement() {
-		StringBuilder result = new StringBuilder(inputStr.length());
-		byte[] bytes = inputStr.getBytes();
+	private void reverseAndComplement() {
+		String result = reverseAndComplement(inputStr);
+		System.out.println(result);
+	}
+
+	public String reverseAndComplement(String text) {
+		StringBuilder result = new StringBuilder(text.length());
+		byte[] bytes = text.getBytes();
 		for (int i = bytes.length - 1; i >= 0; i--) {
 			switch (bytes[i]) {
 			case 'A':
@@ -42,10 +52,10 @@ public class PatternReverser {
 				result.append('G');
 				break;
 			default:
-				String e = new String("Bad char: " + (char)bytes[i]);
+				String e = new String("Bad char: " + (char) bytes[i]);
 				throw new IllegalArgumentException(e);
 			}
 		}
-		System.out.println(result.toString());
+		return result.toString();
 	}
 }

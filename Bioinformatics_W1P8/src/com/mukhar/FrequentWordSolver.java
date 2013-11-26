@@ -1,10 +1,7 @@
 package com.mukhar;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.TreeMap;
-
-import com.mukhar.commons.FilePicker;
 
 public class FrequentWordSolver {
 

@@ -1,11 +1,10 @@
 package com.mukhar;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertArrayEquals;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 import org.junit.Test;
 
